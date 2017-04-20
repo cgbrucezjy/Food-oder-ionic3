@@ -3,4 +3,6 @@ ionic -v
 2.2.2
 
 npm install
+
+
 ionic serve
