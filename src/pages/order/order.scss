@@ -1,0 +1,32 @@
+page-order {
+
+  .thumb {
+    height: 100px;
+    background-position: center;
+  }
+
+  .list-full-border {
+    margin-bottom: 0;
+
+    .item:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .order-item {
+
+    div {
+      display: inline-block;
+
+      &.qty {
+        min-width: 22px;
+        text-align: center;
+        border: 1px solid color($colors, border-color);
+      }
+    }
+
+    .total {
+      margin-left: 24px;
+    }
+  }
+}

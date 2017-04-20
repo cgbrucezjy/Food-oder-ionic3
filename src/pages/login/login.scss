@@ -1,0 +1,12 @@
+page-login {
+
+  .list-no-border {
+
+    .item {
+
+      & + .item {
+        border-top: 1px solid color($colors, border-color);
+      }
+    }
+  }
+}

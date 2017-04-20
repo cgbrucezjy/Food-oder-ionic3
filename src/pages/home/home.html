@@ -1,0 +1,37 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="white">
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <!--banner-->
+  <img src="{{ banner }}" alt="">
+  
+  <!--list of restaurants-->
+  <div padding>
+    <h5>Popular near you</h5>
+    <div *ngFor="let restaurant of restaurants" padding-bottom (click)="viewRestaurant(restaurant.id)">
+      <img src="{{ restaurant.thumb }}" alt="{{ restaurant.name }}">
+      <div>
+        <span class="pull-left bold">{{ restaurant.name }}</span>
+        <span class="pull-right">{{ restaurant.delivery_min }} - {{ restaurant.delivery_max }} MIN</span>
+        <div class="clear"></div>
+      </div>
+      <div>
+        <span color="gray" *ngFor="let cat of restaurant.categories">{{ cat.name }} • </span>
+        <span color="gray">{{ '$$$$$$$'.slice(0, restaurant.price_level) }}</span>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

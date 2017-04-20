@@ -1,0 +1,49 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="white">
+    <ion-title>Search Restaurants</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top color="androidprimary">
+    <ion-searchbar [showCancelButton]="shouldShowCancel"
+                   [(ngModel)]="keyword"
+                   (ionInput)="filterCat($event)"
+                   (ionClear)="clearFilter($event)"
+                   placeholder="Search for a restaurant or dish">
+    </ion-searchbar>
+    <!--number of results-->
+    <div [hidden]="!showResults" text-center>
+      {{ restaurants.length }} results
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding-left padding-right>
+  <ion-list class="list-full-border" [hidden]="showResults">
+    <ion-item *ngFor="let cat of categories" (click)="search(cat.name)">
+      {{ cat.name }}
+    </ion-item>
+  </ion-list>
+
+  <div [hidden]="!showResults" margin-top padding-top>
+    <div *ngFor="let restaurant of restaurants" padding-bottom>
+      <img src="{{ restaurant.thumb }}" alt="{{ restaurant.name }}">
+      <div>
+        <span class="pull-left bold">{{ restaurant.name }}</span>
+        <span class="pull-right">{{ restaurant.delivery_min }} - {{ restaurant.delivery_max }} MIN</span>
+        <div class="clear"></div>
+      </div>
+      <div>
+        <span color="gray" *ngFor="let cat of restaurant.categories">{{ cat.name }} • </span>
+        <span color="gray">{{ '$$$$$$$'.slice(0, restaurant.price_level) }}</span>
+      </div>
+    </div>
+  </div>
+</ion-content>

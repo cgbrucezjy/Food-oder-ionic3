@@ -1,0 +1,33 @@
+page-welcome {
+
+  ion-content {
+    background: url('../assets/img/bg.jpg');
+    background-size: 100% auto;
+
+    .logo {
+      font-size: 1.8em;
+      margin-top: 2em;
+
+      ion-icon {
+        border: 1px solid color($colors, white);
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+        font-size: 2em;
+        border-radius: 50%;
+
+        &:before {
+          margin-left: 0.2em;
+        }
+      }
+
+      span {
+        vertical-align: middle;
+      }
+    }
+
+    .text-desc {
+      font-size: 3.5em;
+    }
+  }
+}

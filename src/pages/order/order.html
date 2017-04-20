@@ -1,0 +1,38 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="white">
+    <ion-title>Order</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="light-bg">
+  <div class="white-bg" *ngFor="let order of orders" padding margin-bottom>
+    <!--<div class="thumb" [ngStyle]="{'background-image': 'url(' + order.restaurant.thumb + ')'}"></div>-->
+    <ion-list class="list-full-border">
+      <!--<ion-item>
+        <ion-icon name="checkmark-circle" color="secondary" item-left></ion-icon>
+        <div>{{ order.restaurant.name }}</div>
+        <span class="text-sm" color="dark">{{ order.delivered_time }}</span>
+      </ion-item>-->
+      <ion-item>
+        <div class="order-item" *ngFor="let item of order.items">
+          <div class="qty" item-left>{{ item.quantity }}</div>
+          <div>{{ item.name }}</div>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-icon item-left></ion-icon>
+        <span>${{ order.total }}</span>
+        <button ion-button class="pull-right" color="secondary">REORDER</button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

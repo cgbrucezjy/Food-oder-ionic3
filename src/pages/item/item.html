@@ -1,0 +1,77 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="white">
+    <ion-buttons end>
+      <button ion-button (click)="goToCart()">
+        <ion-icon name="ios-basket-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-scroll #myScroll scrollX="true" class="subnav" >
+      <ul>
+        <li *ngFor="let it of items"><button ion-button [@bounce]="it.bounceState"  [color]="it.color ? it.color : 'light'" (click)="toggleBounce(it.id,$event)">{{it.name}}</button></li>
+      </ul>
+  </ion-scroll>
+  <div class="video-container">
+    <iframe width="853" height="480" [src]="item.youtubeLink | safe" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <h2 text-center>{{ item.name }}</h2>
+  <p color="gray" text-center padding-left padding-right>{{ item.desc }}</p>
+
+  <!--choose item options-->
+  <!--<div class="light-bg" padding>CHOOSE ONE</div>
+  <ion-list radio-group>
+    <ion-item *ngFor="let opt of item.options.required">
+      <ion-label>{{ opt.name }}</ion-label>
+      <ion-radio value="{{ opt.id}}" item-left></ion-radio>
+    </ion-item>
+  </ion-list>
+
+  <div class="light-bg" padding>ADD-ONS</div>
+  <ion-list>
+    <ion-item *ngFor="let opt of item.options.optional">
+      <ion-label>{{ opt.name }}</ion-label>
+      <span item-right>${{ opt.price }}</span>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <div class="light-bg" padding>SPECIAL INSTRUCTIONS</div>
+  <div padding>
+    <ion-textarea type="text" placeholder="Add a note (extra sauce, no onions, etc.)"></ion-textarea>
+  </div>-->
+
+  <!-- quantity button -->
+  <div class="qty-btn" text-center>
+    <button ion-button class="button-border" (click)="minusQty()">
+      <ion-icon name="remove" color="primary"></ion-icon>
+    </button>
+    <div ion-button class="qty button-border">
+      <span color="dark">{{ quantity }}</span>
+    </div>
+    <button ion-button class="button-border" (click)="plusQty()">
+      <ion-icon name="add" color="primary"></ion-icon>
+    </button>
+  </div>
+
+  <button ion-button block color="secondary" (click)="addCart()">ADD TO CART</button>
+
+  <div>
+                    <h2 id="top"><a name="top">Story Behind</a></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus, felis eu egestas lacinia, velit lorem finibus lectus, sit amet suscipit mi erat et est. Quisque eu mi ac arcu tempus eleifend molestie ut risus. Integer scelerisque nisl id imperdiet molestie. Curabitur lobortis varius consectetur. Etiam sed ex a quam vestibulum fermentum. Vestibulum laoreet metus quis diam egestas, molestie suscipit purus fringilla. Nunc nisl lectus, vulputate sit amet lobortis non, malesuada quis nisl. Cras a tellus ex. Suspendisse molestie lobortis ornare. Suspendisse facilisis elementum dui, eget imperdiet eros tincidunt eu. Praesent hendrerit est vitae arcu facilisis placerat. Pellentesque et fermentum ipsum, id tempus nisi. Curabitur vehicula vehicula aliquam. Donec lectus odio, scelerisque ut tempus vel, porttitor et ex. Donec iaculis odio a ultrices consequat.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus, felis eu egestas lacinia, velit lorem finibus lectus, sit amet suscipit mi erat et est. Quisque eu mi ac arcu tempus eleifend molestie ut risus. Integer scelerisque nisl id imperdiet molestie. Curabitur lobortis varius consectetur. Etiam sed ex a quam vestibulum fermentum. Vestibulum laoreet metus quis diam egestas, molestie suscipit purus fringilla. Nunc nisl lectus, vulputate sit amet lobortis non, malesuada quis nisl. Cras a tellus ex. Suspendisse molestie lobortis ornare. Suspendisse facilisis elementum dui, eget imperdiet eros tincidunt eu. Praesent hendrerit est vitae arcu facilisis placerat. Pellentesque et fermentum ipsum, id tempus nisi. Curabitur vehicula vehicula aliquam. Donec lectus odio, scelerisque ut tempus vel, porttitor et ex. Donec iaculis odio a ultrices consequat.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus, felis eu egestas lacinia, velit lorem finibus lectus, sit amet suscipit mi erat et est. Quisque eu mi ac arcu tempus eleifend molestie ut risus. Integer scelerisque nisl id imperdiet molestie. Curabitur lobortis varius consectetur. Etiam sed ex a quam vestibulum fermentum. Vestibulum laoreet metus quis diam egestas, molestie suscipit purus fringilla. Nunc nisl lectus, vulputate sit amet lobortis non, malesuada quis nisl. Cras a tellus ex. Suspendisse molestie lobortis ornare. Suspendisse facilisis elementum dui, eget imperdiet eros tincidunt eu. Praesent hendrerit est vitae arcu facilisis placerat. Pellentesque et fermentum ipsum, id tempus nisi. Curabitur vehicula vehicula aliquam. Donec lectus odio, scelerisque ut tempus vel, porttitor et ex. Donec iaculis odio a ultrices consequat.</p>
+  </div>
+</ion-content>
